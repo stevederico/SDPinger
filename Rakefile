@@ -1,6 +1,8 @@
- require "net/http"
+require "net/http"
 
- task :call_page do
-   uri = URI.parse('http://workshops.herokuapp.com/')
-   Net::HTTP.get(uri)
- end
+task :call_page do
+  %w{http://www.herokuapp.com}.each do |url|
+    uri = URI.parse(url)
+    Net::HTTP.get(uri)
+  end
+end
